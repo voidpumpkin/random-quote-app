@@ -1,1 +1,51 @@
 @import "~bootstrap/scss/bootstrap";
+
+.mg-fluid-dheight {
+    max-height: 80%;
+    width: auto;
+}
+
+.snow-bg::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-1-1.png'), url('http://www.mcctours.com.my/wp-content/uploads/2018/01/sakura-2.png');
+    animation: snow 10s linear infinite;
+}
+
+@keyframes snow {
+    0% {
+        background-position: 0px 0px, 0px 0px, 0px 0px;
+    }
+
+    50% {
+        background-position: 500px 500px, 100px 200px, -100px 150px;
+    }
+
+    100% {
+        background-position: 500px 1000px, 200px 400px, -100px 300px;
+    }
+}
+
+.lamp-post-gradiant-bg {
+    background: rgb(78,91,100);
+    background: linear-gradient(88deg, rgba(78,91,100,1) 7%, rgba(210,208,213,1) 40%, rgba(210,208,213,1) 70%, rgba(248,248,243,1) 91%);
+}
+.paper-bg {
+    background: white;
+    background: url("https://res.cloudinary.com/rebelwalls/image/upload/b_black,c_fill,fl_progressive,h_533,q_auto,w_800/v1428566123/article/R11221_image1");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.anime-bg {
+    background: rgb(241, 190, 199);
+    background: url("https://i.ytimg.com/vi/wdM7athAem0/maxresdefault.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
