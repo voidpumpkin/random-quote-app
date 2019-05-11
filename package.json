@@ -19,7 +19,8 @@
   "homepage": "https://github.com/julys321/random-quote-app#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "popper.js": "^1.14.7"
   },
   "devDependencies": {
     "html-loader": "^0.5.5",
