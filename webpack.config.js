@@ -1,5 +1,5 @@
 const path = require('path');
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'production',
     entry: './src/index.js',
@@ -8,8 +8,18 @@ module.exports = {
         filename: 'main.js'
     },
     devServer: {
-        publicPath: '/dist',
-        contentBase: path.resolve(__dirname, 'src'),
+        contentBase: path.resolve(__dirname, 'dist'),
         watchContentBase: true
-    }
+    },
+    module: {
+        rules: [{
+            test: /\.html$/,
+            use: ['html-loader']
+        }]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })
+    ]
 };
