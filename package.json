@@ -4,8 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "build": "webpack --mode production",
+    "start:dev": "webpack-dev-server --mode development"
   },
   "repository": {
     "type": "git",
