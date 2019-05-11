@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/julys321/random-quote-app.git"
