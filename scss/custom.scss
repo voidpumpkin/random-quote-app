@@ -36,11 +36,13 @@
 }
 
 .lamp-post-gradiant-bg {
-    background: rgb(78, 91, 100);
-    background: linear-gradient(88deg, rgba(78, 91, 100, 1) 7%, rgba(210, 208, 213, 1) 40%, rgba(210, 208, 213, 1) 70%, rgba(248, 248, 243, 1) 91%);
+    filter: grayscale(10%);
+    background: #91A6A7;
+    background: linear-gradient(88deg, #94B2B6 17%, #89A9A2 30%, rgb(198, 207, 206) 70%, #B8C2B9 91%);
 }
 
 .paper-bg {
+    filter: inherit;
     background: white;
     background: url("../images/paper.jpg");
     background-repeat: no-repeat;
@@ -53,6 +55,15 @@
     background-repeat: no-repeat;
     // TODO: does not cover all page after text() is called
     background-size: cover !important;
+}
+
+.author-image {
+    justify-self: center;
+    flex-shrink: 1;
+}
+
+.oppacity-60 {
+    filter: opacity(60%);
 }
 
 .sk-folding-cube {

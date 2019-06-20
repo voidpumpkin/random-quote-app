@@ -41,14 +41,14 @@ async function changeQoute() {
 }
 
 function addDefaultAuthorImage() {
-    let html = '<img id="author-image"class="img-fluid-dheight mx-auto pt-3 px-3 rounded" ' +
-        `style="justify-self: center;" src = "${image}" alt = "Author image" >`;
+    let html = '<img id="author-image"class="oppacity-60 author-image img-fluid-dheight mx-auto pt-3 px-3 rounded" ' +
+        `src = "${image}" alt = "Author image" >`;
     $('#quote-box').prepend(html);
 }
 
 function addLoading() {
     let html =
-        '<div id="author-image-loading" class="row sk-folding-cube-custom mx-auto pt-3 px-3">' +
+        '<div id="author-image-loading" class="oppacity-60 row sk-folding-cube-custom mx-auto pt-3 px-3">' +
         '<div class="sk-folding-cube">' +
         '<div class="sk-cube1 sk-cube"></div>' +
         '<div class="sk-cube2 sk-cube"></div>' +
