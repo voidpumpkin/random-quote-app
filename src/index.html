@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Random qoute app</title>
 </head>
 
-<body class="h-100 anime-bg">
-    <div class="container d-flex h-100 lamp-post-gradiant-bg" style="max-width: 84vmin;">
-        <div id="quote-box" class="card m-auto paper-bg shadow-lg" style="max-width: 80vmin; border: none;">
-            <div class="card-body">
-                <p id="text" class="card-text font-italic"></p>
-                <p id="author" class="font-italic text-right"></p>
-                <a id="tweet-quote" href="#!" class="oppacity-60 btn btn-outline-primary">Tweet</a>
-                <a id="new-quote" href="" class="oppacity-60 btn btn-outline-primary float-right">New quote</a>
+<body class="anime-bg">
+    <div class="container d-flex metal-post-bg min-h-100vh max-w-512">
+        <div id="quote" class="m-auto paper-bg shadow-lg w-100 h2 p-3 xs-text-align-middle">
+            <span id="quote-text"></span>
+            <p id="quote-author" class="d-block font-italic text-right h3"></p>
+            <div id="quote-interactions-row" class="d-flex flex-row-reverse">
+                <a id="quote-new" href="" class="mx-1 oppacity-60 btn btn-outline-primary">New quote</a>
+                <a id="quote-tweet" href="#!" class="mx-1 oppacity-60 btn btn-outline-primary">Tweet</a>
             </div>
         </div>
     </div>

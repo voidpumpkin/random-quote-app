@@ -18,7 +18,7 @@ let isImageLoading = false;
 
 async function changeQoute() {
     let animeQoute = generateAnimeQuoute();
-    $('#text').text(animeQoute.quotesentence);
+    $('#quote-text').text(animeQoute.quotesentence);
     $('#author').text(`- ${animeQoute.quotecharacter}`);
 
     $('#author-image').remove();
@@ -36,40 +36,33 @@ async function changeQoute() {
         if (imageUrl) {
             $('#author-image').attr('src', imageUrl);
         }
-        $('html').hide().show(0);
     }
 }
 
 function addDefaultAuthorImage() {
-    let html = '<img id="author-image"class="oppacity-60 author-image img-fluid-dheight mx-auto pt-3 px-3 rounded" ' +
+    let html = '<img id="author-image" class="author-image d-block mx-auto pr-3 oppacity-60" ' +
         `src = "${image}" alt = "Author image" >`;
-    $('#quote-box').prepend(html);
+    $('#quote').prepend(html);
 }
 
 function addLoading() {
     let html =
-        '<div id="author-image-loading" class="oppacity-60 row sk-folding-cube-custom mx-auto pt-3 px-3">' +
-        '<div class="sk-folding-cube">' +
-        '<div class="sk-cube1 sk-cube"></div>' +
-        '<div class="sk-cube2 sk-cube"></div>' +
-        '<div class="sk-cube4 sk-cube"></div>' +
-        '<div class="sk-cube3 sk-cube"></div>' +
-        '</div>' +
-        '</div>';
-    $('.card-body').prepend(html);
-    isImageLoading = true
-}
+      `<div id="author-image-loading" class="d-flex mx-auto author-image pr-3 oppacity-60 box-sizing-content" style="width: ${vhToPixels(45) * 0.643759}px;">`+
+      '<div class="spinner-grow mx-auto d-block align-self-center justify-self-center" role="status" >' +
+      '<span class="sr-only">Loading...</span>' +
+      "</div>"+
+      "</div>";
+    $("#quote").prepend(html);
+    isImageLoading = true;
+    }
 
 async function getCharacterImageUrl(anime, character) {
     let characterNameBits = character.split(" ");
-    console.log('characterNameBits', characterNameBits);
     let animeData = await searchForAnime(anime);
     //TODO: fix this
     if (animeData) {
-        console.log('animeData', animeData);
         let characters = await fetchAnimeCharacters(animeData.results[0].mal_id);
         if (characters) {
-            console.log('characterData', characters);
             let matchingCharacters = characters.characters.filter(
                 e =>
                 e.name.includes(characterNameBits[0]) &&
@@ -103,3 +96,7 @@ async function searchForAnime(anime) {
     //TODO: should return.results[0]
     return animeData;
 }
+
+function vhToPixels (vh) {
+    return Math.round(window.innerHeight / (100 / vh));
+  }
