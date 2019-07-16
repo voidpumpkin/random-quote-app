@@ -12,7 +12,7 @@ let isImageLoading = false;
 })();
 
 function addQuoteNewClickEvent() {
-    $("#quote-new").on("click", event => {
+    $("#new-quote").on("click", event => {
         event.preventDefault();
         if (!isImageLoading) {
             changeQuote();
@@ -47,11 +47,11 @@ function removeLoading() {
 }
 
 function changeAuthor(quotecharacter) {
-  $("#quote-author").text(`- ${quotecharacter}`);
+  $("#author").text(`- ${quotecharacter}`);
 }
 
 function changeSentence(quotesentence) {
-  $("#quote-text").text(quotesentence);
+  $("#text").text(quotesentence);
 }
 
 function addDefaultAuthorImage(imageUrl) {
@@ -60,7 +60,7 @@ function addDefaultAuthorImage(imageUrl) {
     `src = "${
       imageUrl ? imageUrl : defaultAuthorImage
     }" alt = "Author image" >`;
-  $("#quote").prepend(html);
+  $("#quote-box").prepend(html);
 }
 
 function addLoading() {
@@ -72,7 +72,7 @@ function addLoading() {
     '<span class="sr-only">Loading...</span>' +
     "</div>" +
     "</div>";
-  $("#quote").prepend(html);
+  $("#quote-box").prepend(html);
   isImageLoading = true;
 }
 
