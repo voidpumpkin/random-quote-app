@@ -1,7 +1,10 @@
 import * as $ from "jquery";
 import "../scss/custom.scss";
 import "bootstrap";
-import * as defaultAuthorImage from "../images/default.jpg";
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/brands'
+import '@fortawesome/fontawesome-free/js/solid'
+import defaultAuthorImage from "../images/default.jpg";
 import generateAnimeQuote from "animequote";
 
 let isImageLoading = false;
@@ -24,6 +27,7 @@ async function changeQuote() {
   let animeQuote = generateAnimeQuote();
   changeSentence(animeQuote.quotesentence);
   changeAuthor(animeQuote.quotecharacter);
+  changeTweetText(animeQuote.quotesentence, animeQuote.quotecharacter);
   await changeAuthorImageBy(animeQuote.quoteanime, animeQuote.quotecharacter);
 }
 
@@ -52,6 +56,10 @@ function changeAuthor(quotecharacter) {
 
 function changeSentence(quotesentence) {
   $("#text").text(quotesentence);
+}
+
+function changeTweetText(quotesentence, quotecharacter) {
+  $("#tweet-quote").attr("href",`https://twitter.com/intent/tweet?hashtags=quotes,anime&related=freecodecamp&text=${quotesentence} - ${quotecharacter}`)
 }
 
 function addDefaultAuthorImage(imageUrl) {
